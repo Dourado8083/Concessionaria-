@@ -1,55 +1,183 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
-    <title>RM CAR</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-<div class="container">
-<div class="logo">
-<img src="imagens/logo.jpg">
-</div><!--logo-->
-<nav class="desktop">
-<ul>
-<li><a style="color: #EB2D2D;"  href="">HOME</a></li>
-<li><a href="">VENDAS</a></li>
-<li><a href="">COMPRAS</a></li>
-<li><a href="">SOBRE</a></li>
-</ul>
-</nav>
-<nav class="mobile">
- <ul>
-<li><a style="color: #EB2D2D;"  href="">HOME</a></li>
-<li><a href="">VENDAS</a></li>
-<li><a href="">COMPRAS</a></li>
-<li><a href="">SOBRE</a></li>
- </ul>
-</nav><!--mobie-->
-<div class="clear"></div>
-</div>
-</header>
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family:'Oswald', sans-serif;
+}
+html,body{
+height: 100%;
+}
+.container{
+width: 100%;
+max-width: 1280px;
+margin: 0 auto;
+}
+.clear{
+clear: both;
+}
+header{
+padding: 20px 2% 35px 2%;
+height: 130px;
 
-<section class="banner">
-<div class="container">
-<div class="text-banner">
-<div class="text-banner-single">Consultoria</div>
-<div class="text-banner-single">Compra</div>
-<div class="text-banner-single">Venda</div>
-<div class="text-banner-single">email.@hotmail.com</div>
-</div><!--text-banner-->
-</div><!--container-->
-</section><!--banner-->
-<section class="veiculos-destaque">
-<div class="line-titulo">
-<div class="ln1"></div>
-<h2>Veículos em destaque</h2>
-</div><!--line-titulo-->
-</section><!--veiculos-destaque-->
-</body>
-</html>
+}
+header div.logo{
+float: left;
+}
+header nav.desktop{
+float: right;
+position: relative;
+top:40px;
+}
+nav.mobile{
+margin-top: 40px;
+display:none;
+float: right;
+width: 32px;
+height: 32px;
+background-size:100% 100%;
+cursor: pointer;
+background-image: url('imagens/menu-de-tres-linhas.png');
+}
+nav.mobile ul{
+  display: none;
+width: 100%;
+left: 0;
+z-index: 999;
+border-bottom: 4px solid #EB2D2D;
+top: 120px;
+position: absolute;
+text-align: center;
+background-color:white;
+}
+nav.mobile li{
+  font-size:23px;
+  padding: 20px 0px;
+  font-style:italic;
+}
+nav.mobile li a{
+color:black;
+text-decoration: none;
+}
+header nav.desktop ul{
+list-style-type: none;
+}
+header nav.desktop ul li{
+float: left;
+font-size:23px;
+padding: 0 30px;
+font-style:italic;
+}
+header nav.desktop a{
+color: black;
+text-decoration: none;
+}
+section.banner{
+width: 100%;
+height: 600px;
+background-color: black;
+background-image: url(imagens/bg.jpg); /*colocar a oto do carro*/
+background-size: contain;
+background-position: right bottom;
+background-repeat: no-repeat;
+}
+.text-banner{
+padding:100px;
+}
+/*Banner vermelho */
+.text-banner-single{
+width: 314px;
+font-style: italic;
+margin-top:20px;
+padding: 12px 30px;
+text-transform: uppercase;
+height: 50px;
+background-image:url(imagens/box-text.png);
+ background-size:100% 100%;
+ color: white;
+ font-size: 23px;
+}
+.text-banner .text-banner-single:nth-of-type(2){
+width: 200px;
+height: 50px;
+position:relative;
+left:-10px;
+}
+.text-banner .text-banner-single:nth-of-type(3){
+width: 170px;
+position:relative;
+height: 50px;
+left:-20px;
+    }
+.text-banner .text-banner-single:nth-of-type(4){
+width: 320px;
+background-image:url(imagens/box-white-text.png);
+height: 50px;
+color:black;
+font-size: 21px;
+position: relative;
+left: -30px;
+}
+section.veiculos-destaque{
+padding: 90px 2%;
+}
+section.veiculos-destaque h2{
+text-align: center;
+font-size: 27px;
+font-style: italic;
+position: relative;
+background:white;
+display: inline-block;
+text-transform: uppercase;
+padding: 0 20px;
+}
+.line-titulo{
+position: relative;
+text-align: center;
+max-width:800px;
+margin: 0 auto;
+}
+.ln1{
+  position: absolute;
+  height: 2px;
+  top: 20px;
+  background-color:black;
+  width: 100%;
+}
+@media screen and (max-width: 768px){
+    section.banner{
+        height:70vh;
+        min-height: 0;
+        max-width:800px;
+    }
+    nav.mobile{
+     display: block; 
+    }
+}
+@media screen and (max-width: 1400px){
+section.banner{
+background-size:90% auto;
+background-position: 200% 100%;
+}
+}
+@media screen and (max-width: 1024px){
+section.banner{
+background-size:cover;
+background-position: center;
+height: 70vw;
+min-height: 500px;
+  }
+} 
+@media screen and(max-width: 580px){
+.text-banner{
+ padding:30px;
+ }
+/*Banner vermelho */
+.text-banner-single{
+font-size: 18px;
+}
+  }
+@media screen and(max-width: 720px){
+nav.desktop{
+ display: none;   
+}
+}
